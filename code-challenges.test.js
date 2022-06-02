@@ -1,7 +1,7 @@
 // ASSESSMENT 3: Coding Practical Questions with Jest
 
-const { sequenceExpression } = require("@babel/types")
-const { array } = require("yargs")
+// const { sequenceExpression } = require("@babel/types")
+// const { array } = require("yargs")
 
 // Please read all questions thoroughly
 // Pseudo coding is REQUIRED
@@ -79,65 +79,80 @@ const { array } = require("yargs")
 // Describe will run the nested method, it will test the nested method, and expect will call the function.
 
     describe ("fullA1", () => {
-    //const fullArr1 = [4, 9, 0, "7", 8, true, "hey", 7, 199, -9, false, "hola"]
-// Expected output: [-9, 7, 9, 199]
-    //const fullArr2 = ["hello", 7, 23, -823, false, 78, null, "67", 6, "number"]
-// Expected output: [-823, 7, 23]
+    const fullArr1 = [4, 9, 0, "7", 8, true, "hey", 7, 199, -9, false, "hola"]
+   //  Expect output: [-9, 7, 9, 199]
+   const fullArr2 = ["hello", 7, 23, -823, false, 78, null, "67", 6, "number"]
+   //  Expect output: [-823, 7, 23]
 
-    it("return a new array of odd numbers from least to greatest ", () => {
-    expect(fullA1(fullArray1)).toEqual([-9, 7, 9, 199])
-    expect(fullA2(fullArray2)).toEqual([-823, 7, 23,])
+    it("return a new array of odd numbers from least to greatest", () => {
+    expect(fullA1(fullArr1)).toEqual([-9, 7, 9, 199])
+    expect(fullA1(fullArr2)).toEqual([-823, 7, 23,])
     })
     })
 
 //Good fail- ReferenceError: fullA1 is not defined
 
-const fullArr1 = [4, 9, 0, "7", 8, true, "hey", 7, 199, -9, false, "hola"]
-Expected output: [-9, 7, 9, 199]
-const fullArr2 = ["hello", 7, 23, -823, false, 78, null, "67", 6, "number"]
-Expected output: [-823, 7, 23]
+// const fullArr1 = [4, 9, 0, "7", 8, true, "hey", 7, 199, -9, false, "hola"]
+// expect output: [-9, 7, 9, 199]
+// const fullArr2 = ["hello", 7, 23, -823, false, 78, null, "67", 6, "number"]
+// expect output: [-823, 7, 23]
 
 
 // b) Create the function that makes the test pass.
 
-const fullArr1 = () => {
-    return fullA1
+//Peusodo Code:
+// Declare a function that takes in an array and returns only odd numbers
+// sort from least to greatest using .sort
+// use the .filter method to filter out everything but odd numbers
+
+const fullA1 = (logi) => {
+    return logi.filter(value => value % 2 !== 0 && typeof value === "number").sort ((a, b) => (a-b))
+
+    
 }
 
+// fullA1
+//     ✓ return a new array of odd numbers from least to greatest (1 ms)
 
 // --------------------3) Create a function that takes in an array and returns an array of the accumulating sum. An empty array should return an empty array.
 
 // Peusdocode: Return the array with the accumulatin sum, empty array should be empty.
+
 // Run the test to get a good fail.
 // To get the good fail first invoke describe, it, and expect methods.
 // Describe will run the nested method, it will test the nested method, and expect will call the function.
 // a) Create a test with expect statements for each of the variables provided.
 
-describe ("emptyArr", () => {
+describe("emptyArr", () => {
+
 const numbersToAdd1 = [2, 4, 45, 9]
-Excpected output: [2, 6, 51, 60]
+// Expected output: [2, 6, 51, 60]
     
 const numbersToAdd2 = [0, 7, -8, 12]
-Expected output: [0, 7, -1, 11]
+// Expected output: [0, 7, -1, 11]
 
 const numbersToAdd3 = []
-Expected output: []
-    it("return a new array of odd numbers from least to greatest ", () => {
-    expect(emptyArr(numbersToAdd1)).toEqual([2, 6, 51, 60])
-    expect(emptyArr2(numbersToAdd2)).toEqual([0, 7, -1, 11])
-    expect(emptyArr3(numbersToAdd3)).toEqual([])
-    })
-    })
-
-// const numbersToAdd1 = [2, 4, 45, 9]
-// // Excpected output: [2, 6, 51, 60]
-
-// const numbersToAdd2 = [0, 7, -8, 12]
-// // Expected output: [0, 7, -1, 11]
-
-// const numbersToAdd3 = []
 // Expected output: []
 
-Good fail -  ReferenceError: emptyArr is not defined
+    it("return a new array of odd numbers from least to greatest", () => {
+    expect(emptyArr(numbersToAdd1)).toEqual([2, 6, 51, 60])
+    expect(emptyArr(numbersToAdd2)).toEqual([0, 7, -1, 11])
+    expect(emptyArr(numbersToAdd3)).toEqual([])
+    })
+    })
+
+// PuesdoCode
+
+// Create a function that returns only accumulating sum.
+// Empty array should return empty.
+
+//Good fail -  ReferenceError: emptyArr is not defined
 
 // b) Create the function that makes the test pass.
+
+const emptyArr = (arr) => {
+    return arr.map((sum => value => sum += value)(0));
+}
+
+// emptyArr
+//     ✓ return a new array of odd numbers from least to greatest (1 ms)
