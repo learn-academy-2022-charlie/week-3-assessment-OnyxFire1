@@ -141,7 +141,6 @@ const numbersToAdd3 = []
     })
     })
 
-// PuesdoCode
 
 // Create a function that returns only accumulating sum.
 // Empty array should return empty.
@@ -149,6 +148,19 @@ const numbersToAdd3 = []
 //Good fail -  ReferenceError: emptyArr is not defined
 
 // b) Create the function that makes the test pass.
+
+
+// PuesdoCode
+
+// Requires a function to run for each element.
+// Call a function once for each element using .map
+//Add the value of and assign the result to the variable
+//Sum will return 0 value because the array is empty
+// Return a new array.
+
+// I'm not sure if this makes sense, trying to explain it the best way I can. I did get help from my tutor.
+
+
 
 const emptyArr = (arr) => {
     return arr.map((sum => value => sum += value)(0));
